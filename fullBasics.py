@@ -853,3 +853,158 @@ myiter = iter(myclass)
 
 for x in myiter:
     print(x)
+
+
+# ----- MODULES -----
+# There is a built-in function to list all the function names (or variable names) in a module. The dir() function:
+# A date in Python is not a data type of its own, but we can import a module named datetime to work with dates as date objects.
+# The method is called strftime(), and takes one parameter, format, to specify the format of the returned string:
+"""
+Directive	Description	Example	
+%a	Weekday, short version	Wed	
+%A	Weekday, full version	Wednesday	
+%w	Weekday as a number 0-6, 0 is Sunday	3	
+%d	Day of month 01-31	31	
+%b	Month name, short version	Dec	
+%B	Month name, full version	December	
+%m	Month as a number 01-12	12	
+%y	Year, short version, without century	18	
+%Y	Year, full version	2018	
+%H	Hour 00-23	17	
+%I	Hour 00-12	05	
+%p	AM/PM	PM	
+%M	Minute 00-59	41	
+%S	Second 00-59	08	
+%f	Microsecond 000000-999999	548513	
+%z	UTC offset	+0100	
+%Z	Timezone	CST	
+%j	Day number of year 001-366	365	
+%U	Week number of year, Sunday as the first day of week, 00-53	52	
+%W	Week number of year, Monday as the first day of week, 00-53	52	
+%c	Local version of date and time	Mon Dec 31 17:41:00 2018	
+%C	Century	20	
+%x	Local version of date	12/31/18	
+%X	Local version of time	17:41:00	
+%%	A % character	%	
+%G	ISO 8601 year	2018	
+%u	ISO 8601 weekday (1-7)	1	
+%V	ISO 8601 weeknumber (01-53)	01
+"""
+# Python has a built-in package called json, which can be used to work with JSON data.
+# If you have a JSON string, you can parse it by using the json.loads() method.
+# import json
+# some JSON:
+# x = '{ "name":"John", "age":30, "city":"New York"}'
+
+# # parse x:
+# y = json.loads(x)
+
+# # the result is a Python dictionary:
+# print(y["age"])
+
+# # If you have a Python object, you can convert it into a JSON string by using the json.dumps() method.
+# # import json
+
+# # a Python object (dict):
+# x = {
+#     "name": "John",
+#     "age": 30,
+#     "city": "New York"
+# }
+
+# # convert into JSON:
+# y = json.dumps(x)
+
+# # the result is a JSON string:
+# print(y)
+
+"""
+You can convert Python objects of the following types, into JSON strings:
+
+dict
+list
+tuple
+string
+int
+float
+True
+False
+None
+
+When you convert from Python to JSON, Python objects are converted into the JSON (JavaScript) equivalent:
+
+Python	JSON
+dict	Object
+list	Array
+tuple	Array
+str	String
+int	Number
+float	Number
+True	true
+False	false
+None	null
+"""
+# The example above prints a JSON string, but it is not very easy to read, with no indentations and line breaks.
+# The json.dumps() method has parameters to make it easier to read the result:
+# json.dumps(x, indent=4)
+# json.dumps(x, indent=4, separators=(". ", " = "))
+# json.dumps(x, indent=4, sort_keys=True)
+
+
+# --- TRY...EXCEPT ---
+# Raise an exception
+# As a Python developer you can choose to throw an exception if a condition occurs.
+# To throw (or raise) an exception, use the raise keyword.
+x = -1
+
+if x < 0:
+    raise Exception("Sorry, no numbers below zero")
+
+
+# --- FORMATTING ---
+"""
+Here is a list of all the formatting types.
+
+Formatting Types
+:<		Left aligns the result (within the available space)
+:>		Right aligns the result (within the available space)
+:^		Center aligns the result (within the available space)
+:=		Places the sign to the left most position
+:+		Use a plus sign to indicate if the result is positive or negative
+:-		Use a minus sign for negative values only
+: 		Use a space to insert an extra space before positive numbers (and a minus sign before negative numbers)
+:,		Use a comma as a thousand separator
+:_		Use a underscore as a thousand separator
+:b		Binary format
+:c		Converts the value into the corresponding Unicode character
+:d		Decimal format
+:e		Scientific format, with a lower case e
+:E		Scientific format, with an upper case E
+:f		Fix point number format
+:F		Fix point number format, in uppercase format (show inf and nan as INF and NAN)
+:g		General format
+:G		General format (using a upper case E for scientific notations)
+:o		Octal format
+:x		Hex format, lower case
+:X		Hex format, upper case
+:n		Number format
+:%		Percentage format
+
+Example:
+price = 59000
+txt = f"The price is {price:,} dollars"
+print(txt)
+"""
+# Also, if you want to refer to the same value more than once, use the index number:
+age = 36
+name = "John"
+txt = "His name is {1}. {1} is {0} years old."
+print(txt.format(age, name))
+# Named Indexes
+# You can also use named indexes by entering a name inside the curly brackets {carname},
+# but then you must use names when you pass the parameter values txt.format(carname = "Ford"):
+myorder = "I have a {carname}, it is a {model}."
+print(myorder.format(carname="Ford", model="Mustang"))
+
+# To work with ReGex in python you must import re module
+# ------------------------------------ THE END ------------------------------------------
