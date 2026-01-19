@@ -360,13 +360,8 @@ values()	Returns a list of all the values in the dictionary
 # ====================================================================================================================================
 
 # ----- CODED -----
-# Array:
-# To work with arrays in Python you will have to import a library, like the NumPy library.
+# Data Structures is about how data can be stored in different structures.
+# Algorithms is about how to solve different problems, often by searching through and manipulating data structures.
+# Understanding DSA helps you to find the best combination of Data Structures and Algorithms to create more efficient code.
 
-# Stack:
-#
-
-# Queue
-# Linked Lists
-# Tree
-# Graph
+# ----- STACKS -----
