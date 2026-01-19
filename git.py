@@ -7,10 +7,15 @@
 # git clone (ssh/https)
 # git remote -v
 
+# git fetch
+# git diff master origin/master
+# git pull
 # git status
 # git add . (or file name)
 # git restore --staged (file name)
 # git commit -m "(message here)"
+# git push --set-upstream origin master
+# git push origin (branch_name)
 # git push
 
 # git log
