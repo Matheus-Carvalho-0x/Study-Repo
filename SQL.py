@@ -346,3 +346,41 @@ SUM() - returns the total sum of a numerical column
 AVG() - returns the average value of a numerical column
 Aggregate functions ignore null values (except for COUNT(*)).
 """
+# The MIN() function returns the smallest value of the selected column.
+# The MAX() function returns the largest value of the selected column.
+# e.g SELECT MIN(Price) FROM Products;
+# e.g SELECT MAX(Price) FROM Products;
+"""
+SELECT MIN(column_name)
+FROM table_name
+WHERE condition;
+
+SELECT MAX(column_name)
+FROM table_name
+WHERE condition;
+"""
+# When you use MIN() or MAX(), the returned column will not have a descriptive name.
+# To give the column a descriptive name, use the AS keyword:
+# e.g SELECT MIN(Price) AS SmallestPrice FROM Products;
+# Here we use the MIN() function and the GROUP BY clause, to return the smallest price for each category in the Products table:
+# e.g SELECT MIN(Price) AS SmallestPrice, CategoryID FROM Products GROUP BY CategoryID;
+
+# The COUNT() function returns the number of rows that matches a specified criterion.
+# e.g SELECT COUNT(*) FROM Products;
+"""
+SELECT COUNT(column_name)
+FROM table_name
+WHERE condition;
+"""
+# NOTE: If you specify a column name instead of (*), NULL values will not be counted.
+# Find the number of products where the ProductName is not null:
+# e.g SELECT COUNT(ProductName) FROM Products;
+# You can add a WHERE clause to specify conditions:
+# e.g SELECT COUNT(ProductID) FROM Products WHERE Price > 20;
+# You can ignore duplicates by using the DISTINCT keyword in the COUNT() function.
+# If DISTINCT is specified, rows with the same value for the specified column will be counted as one.
+# e.g SELECT COUNT(DISTINCT Price) FROM Products;
+# Give the counted column a name by using the AS keyword.
+# e.g SELECT COUNT(*) AS [Number of records] FROM Products;
+# Here we use the COUNT() function and the GROUP BY clause, to return the number of records for each category in the Products table:
+# e.g SELECT COUNT(*) AS [Number of records], CategoryID FROM Products GROUP BY CategoryID;
