@@ -384,3 +384,24 @@ WHERE condition;
 # e.g SELECT COUNT(*) AS [Number of records] FROM Products;
 # Here we use the COUNT() function and the GROUP BY clause, to return the number of records for each category in the Products table:
 # e.g SELECT COUNT(*) AS [Number of records], CategoryID FROM Products GROUP BY CategoryID;
+
+# The SUM() function returns the total sum of a numeric column.
+# Return the sum of all Quantity fields in the OrderDetails table:
+# e.g SELECT SUM(Quantity) FROM OrderDetails;
+"""
+SELECT SUM(column_name)
+FROM table_name
+WHERE condition;
+"""
+# SELECT SUM(Quantity) FROM OrderDetails WHERE ProductId = 11;
+# Name the column "total":
+# e.g SELECT SUM(Quantity) AS total FROM OrderDetails;
+# Here we use the SUM() function and the GROUP BY clause, to return the Quantity for each OrderID in the OrderDetails table:
+# e.g SELECT OrderID, SUM(Quantity) AS [Total Quantity] FROM OrderDetails GROUP BY OrderID;
+# The parameter inside the SUM() function can also be an expression.
+# If we assume that each product in the OrderDetails column costs 10 dollars, we can find the total earnings in
+# dollars by multiply each quantity with 10:
+# e.g SELECT SUM(Quantity * 10) FROM OrderDetails;
+# We can also join the OrderDetails table to the Products table to find the actual amount, instead of assuming it is 10 dollars:
+# Join OrderDetails with Products, and use SUM() to find the total amount:
+# e.g SELECT SUM(Price * Quantity) FROM OrderDetails LEFT JOIN Products ON OrderDetails.ProductID = Products.ProductID;
